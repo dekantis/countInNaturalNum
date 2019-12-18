@@ -1,15 +1,20 @@
 <?php
 
-function countInNaturalNum($naturalNum)
+//Задача: Определить  количество  цифр,  меньших  5,  используемых  при  записи натурального числа N.
+
+$n=25272; //Натуральное число
+
+//Функция для подсчета цифр
+function countInNaturalNum(int $naturalNum): int
 {
     $count = 0;
     while ($naturalNum>0) {
-        if ($naturalNum%10<5) {
+        if ($naturalNum%10<5) { //Проверка текущей цифры
             $count++;
         }
-        $naturalNum = intval($naturalNum/10);
+        $naturalNum = (int)($naturalNum/10);
     }
     return $count;
 }
+echo "В числе $n - ".countInNaturalNum($n)." цифры < 5";
 
-echo countInNaturalNum(2725);
